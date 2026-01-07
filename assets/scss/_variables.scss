@@ -1,0 +1,49 @@
+// Theme global variables.
+$enable-dark-mode: false;
+
+// Font
+$font-size-base: 1rem;
+$enable-responsive-font-sizes: true;
+
+// Colors
+$primary: #00749a;
+$secondary: #464342;
+
+// Font
+$font-family-primary: "Lato", sans-serif;
+$font-family-secondary: $font-family-primary;
+$font-family-base: $font-family-primary;
+$font-size-base: 1rem;
+
+// Paragraph
+$paragraph-margin-bottom:   1.25rem;
+
+// Heading
+$headings-font-family: $font-family-secondary;
+$headings-font-weight: 700;
+$headings-margin-bottom: 1rem;
+
+$display-font-weight: 400;
+
+// Grid breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+// Grid containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+);
+
+// Form controls
+$input-placeholder-color: #6c757d;
+
+// Alert
+$alert-padding-y: 0.75rem;

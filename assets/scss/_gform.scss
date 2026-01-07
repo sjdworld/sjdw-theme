@@ -1,0 +1,162 @@
+.gfield select,
+.gfield textarea,
+.gfield input[type="text"],
+.gfield input[type="tel"],
+.gfield input[type="email"],
+.gfield input[type="number"] {
+	height: $input-height;
+	padding: $input-padding-y $input-padding-x !important;
+	font-family: $input-font-family;
+
+	@include font-size($input-font-size);
+	font-weight: $input-font-weight;
+	line-height: $input-line-height;
+	color: $input-color;
+	background-color: $input-bg;
+	background-clip: padding-box;
+	border: $input-border-width solid $input-border-color;
+
+	@include border-radius($input-border-radius, 0);
+	@include box-shadow($input-box-shadow);
+	@include transition($input-transition);
+
+	&::-ms-expand {
+		background-color: transparent;
+		border: 0;
+	}
+
+	@include form-control-focus();
+
+	&::placeholder {
+		color: $input-placeholder-color;
+		opacity: 1;
+	}
+
+	&:disabled,
+	&[readonly] {
+		background-color: $input-disabled-bg;
+		opacity: 1;
+	}
+}
+
+.gfield input.ginput_total {
+	padding: 0 !important;
+}
+
+.gfield select {
+	margin-top: 12px;
+	margin-bottom: 12px;
+
+	&:focus::-ms-value {
+		color: $input-color;
+		background-color: $input-bg;
+	}
+}
+
+.gfield .ginput_card_security_code {
+	display: inline-block !important;
+}
+
+.ginput_total {
+	font-size: 1.5rem !important;
+	color: #dc3545 !important;
+}
+
+.gform_button {
+	display: inline-block;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	color: $body-color;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	background-color: transparent;
+	border: $btn-border-width solid transparent;
+
+	@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	@include transition($btn-transition);
+
+	@include hover {
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	&:focus,
+	&.focus {
+		outline: 0;
+		box-shadow: $btn-focus-box-shadow;
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: $btn-disabled-opacity;
+
+		@include box-shadow(none);
+	}
+
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {
+
+		@include box-shadow($btn-active-box-shadow);
+
+		&:focus {
+
+			@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+		}
+	}
+
+	@include button-variant($primary, $primary);
+	width: 100%;
+}
+
+.gform_wrapper .top_label li.gfield.gf_left_half .ginput_container:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm):not(.ginput_container_date):not(.ginput_quantity):not(.datepicker):not(.gfield_signature_container),
+.gform_wrapper .top_label li.gfield.gf_right_half .ginput_container:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm):not(.ginput_container_date):not(.ginput_quantity):not(.datepicker):not(.gfield_signature_container) {
+	margin-top: 0;
+}
+
+.gform_wrapper .field_description_below .gfield_description {
+	padding-top: 5px;
+	color: $gray-600;
+	font-style: italic;
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+	display: none;
+	visibility: hidden;
+}
+
+.gform_wrapper li.gfield.gfield_error:not(.gfield_contains_required.gfield_creditcard_warning) {
+	background-color: transparent;
+	margin-bottom: 0;
+	border-top: none;
+	border-bottom: none;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+.gform_wrapper li.gfield_error textarea {
+	border-color: #f00;
+}
+
+.gform_wrapper .hidden_label label.gfield_label {
+	display: none;
+	visibility: hidden;
+	margin: 0;
+}
+
+.gform_wrapper ul li.gfield {
+	margin-top: 12px;
+}
+
+.gform_wrapper div.validation_error {
+	border-width: 1px;
+	background-color: rgba(255, 223, 224, 0.25);
+}
+
+@media (max-width: 640px) {
+
+	.gform_wrapper.gravity-theme fieldset.ginput_cardinfo_left {
+		flex: 0 0 100% !important;
+	}
+}

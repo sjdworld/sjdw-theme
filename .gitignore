@@ -1,0 +1,35 @@
+# Composer
+vendor
+composer.lock
+composer.phar
+
+# Node
+node_modules
+package-lock.json
+
+# Build
+build
+.phpunit.result.cache
+assets/vendor
+assets/css/*.min.css
+assets/js/*.min.js
+
+# Excludes
+!assets/scss/vendor
+
+# OS and IDE
+*~
+*.bak
+Thumbs.db
+desktop.ini
+.buildpath
+.project
+.settings
+*.tmproj
+git_impact.sh
+cache.properties
+nbproject
+.php_cs.cache
+._.DS_Store
+.DS_Store
+.vscode

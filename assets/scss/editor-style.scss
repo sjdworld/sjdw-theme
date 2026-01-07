@@ -1,0 +1,106 @@
+// Global variables
+@import "variables";
+
+// Bootstrap required parts
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Bootstrap components
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+:root {
+
+	@each $color, $value in $colors {
+		--#{$prefix}#{$color}: #{$value};
+	}
+
+	@each $color, $value in $grays {
+		--#{$prefix}gray-#{$color}: #{$value};
+	}
+
+	@each $color, $value in $theme-colors {
+		--#{$prefix}#{$color}: #{$value};
+	}
+}
+
+html,
+body {
+	font-synthesis: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+ul,
+ol {
+	padding-left: 1.25rem;
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.has-text-color > a {
+	color: inherit;
+}
+
+.wp-block-buttons {
+
+	&.is-layout-flex {
+		gap: 1rem;
+	}
+
+	.wp-block-button {
+
+		.wp-block-button__link {
+			padding: $btn-padding-y $btn-padding-x !important;
+			transition: all 0.3s ease;
+			border-radius: 0.25rem;
+			border: 1px solid var(--#{$prefix}primary);
+			border-width: 1px !important;
+			line-height: $line-height-base !important;
+
+			&.has-primary-background-color {
+				background-color: var(--#{$prefix}primary) !important;
+				border-color: var(--#{$prefix}primary) !important;
+				color: var(--#{$prefix}white) !important;
+			}
+
+			&.has-secondary-background-color {
+				background-color: var(--#{$prefix}secondary) !important;
+				border-color: var(--#{$prefix}secondary) !important;
+				color: var(--#{$prefix}white) !important;
+			}
+		}
+
+		&.is-style-outline {
+
+			.wp-block-button__link {
+				line-height: $line-height-base !important;
+				border: 1px solid var(--#{$prefix}primary);
+				color: var(--#{$prefix}primary);
+
+				&.has-primary-color {
+					border-color: var(--#{$prefix}primary) !important;
+					color: var(--#{$prefix}primary) !important;
+				}
+
+				&.has-secondary-color {
+					border-color: var(--#{$prefix}secondary) !important;
+					color: var(--#{$prefix}secondary) !important;
+				}
+			}
+		}
+	}
+}
+
+.wp-block-wp-bootstrap-blocks-row {
+
+	@include make-row();
+}

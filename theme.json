@@ -1,0 +1,93 @@
+{
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#00749a",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#464342",
+					"name": "Secondary"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+        {
+          "fontFamily": "Lato, sans-serif",
+          "slug": "primary",
+          "name": "Lato"
+        }
+			],
+			"fontSizes": [
+				{
+					"size": "12px",
+					"slug": "small"
+				},
+				{
+					"size": "16px",
+					"slug": "medium"
+				},
+				{
+					"size": "20px",
+					"slug": "large"
+				},
+				{
+					"size": "28px",
+					"slug": "x-large"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1320px",
+			"wideSize": "1400px"
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--white)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			}
+		},
+		"spacing": {
+			"spacingScale": {
+          "operator": "*",
+          "increment": 1.5,
+          "steps": 7,
+          "mediumStep": 1.5,
+          "unit": "rem"
+        },
+        "spacingSizes": [
+          {
+            "slug": "40",
+            "size": "1rem",
+            "name": "Small"
+          },
+          {
+            "slug": "50",
+            "size": "1.5rem",
+            "name": "Medium"
+          },
+          {
+            "slug": "60",
+            "size": "2rem",
+            "name": "Large"
+          }
+        ]
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--primary)",
+			"fontSize": "var(--wp--preset--font-size--medium)"
+		}
+	}
+}

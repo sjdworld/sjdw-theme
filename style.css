@@ -1,0 +1,20 @@
+/*
+ * @wordpress-theme
+ * Theme Name:          SJDW Theme
+ * Version:             0.0.1
+ * Description:         A custom WordPress theme from the house of SJDWorld.
+ * Theme URI:           https://github.com/sjdworld/sjdw-theme
+ * Author:              Sjdworld
+ * Author URI:          https://sjdworld.com
+ * License:             MIT
+ * License URI:         https://opensource.org/licenses/MIT
+ * Text Domain:         sjdw-theme
+ * Domain Path:         /languages
+ * Requires PHP:        8.2
+ * Requires at least:   6.0
+*/
+
+/**
+ * Mandatory file for WordPress to identify the theme info and version.
+ * Pleaase do not add custom styles to this file, instead please use css/custom.css file.
+*/

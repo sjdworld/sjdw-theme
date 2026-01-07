@@ -1,0 +1,30 @@
+// Global variables
+@import "variables";
+
+// Bootstrap required parts
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Theme
+@import "theme";
+
+// Navigation
+@import "navigation";
+
+// WordPress
+@import "wordpress";
+
+// Search
+@import "search";
+
+// Woocommerce
+@import "woocommerce";
+
+// GForms
+// @import "gform";
+
+// Others
+@import "others";

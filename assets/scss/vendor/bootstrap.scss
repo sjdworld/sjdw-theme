@@ -1,0 +1,102 @@
+// import theme variables
+@import "../variables";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// Bootstrap and its default variables
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+	font-synthesis: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+ul,
+ol {
+	padding-left: 1.25rem;
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	a:hover,
+	a:focus,
+	a:active {
+		transition: color 0.2s ease;
+		text-decoration: none;
+		outline: none;
+	}
+
+	a:hover svg {
+		transition: fill 0.2s ease;
+	}
+}
+
+.btn {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+span.star {
+	color: var(--#{$prefix}danger);
+}
+
+.form-control.error,
+.custom-file-input.error ~ label.custom-file-label {
+	border: 1px solid var(--#{$prefix}danger);
+}
+
+label.error {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.form-control-lg {
+	font-size: inherit;
+}
+
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+
+.text-capitalize {
+	text-transform: capitalize !important;
+}
+
+.disabled-fields {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.custom-file,
+.custom-file-label,
+.custom-file-input {
+	cursor: pointer !important;
+}
+
+label.required {
+	position: relative;
+
+	&::after {
+		content: "*";
+		position: absolute;
+		top: 0;
+		right: -10px;
+		color: var(--#{$prefix}danger);
+	}
+}

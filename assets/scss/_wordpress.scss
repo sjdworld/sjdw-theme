@@ -1,0 +1,261 @@
+.alignfull .is-layout-constrained {
+
+	@include make-container();
+}
+
+// Responsive containers that are 100% wide until a breakpoint
+@each $breakpoint, $container-max-width in $container-max-widths {
+
+	@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+		%responsive-container-#{$breakpoint} {
+			max-width: $container-max-width;
+		}
+
+		.alignfull .is-layout-constrained {
+
+			@extend %responsive-container-#{$breakpoint};
+		}
+	}
+}
+
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+
+	@include make-container();
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft,
+.alignright {
+	margin-inline-start: 0 !important;
+	margin-inline-end: 0 !important;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignfull {
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	left: 50%;
+}
+
+.alignwide {
+	position: relative;
+	max-width: 1400px;
+	margin-left: -700px;
+	left: 50%;
+}
+
+.has-text-color a {
+	color: inherit;
+}
+
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+}
+
+.wp-block-buttons {
+
+	&.is-layout-flex {
+		gap: 1rem;
+	}
+
+	.wp-block-button {
+
+		.wp-block-button__link {
+			padding: $btn-padding-y $btn-padding-x !important;
+			transition: all 0.3s ease;
+			border-radius: 0.25rem;
+			border: 1px solid var(--#{$prefix}primary);
+			border-width: 1px !important;
+
+			&.has-primary-background-color {
+				background-color: var(--#{$prefix}primary) !important;
+				border-color: var(--#{$prefix}primary) !important;
+				color: var(--#{$prefix}white) !important;
+
+				&:hover {
+					background-color: var(--#{$prefix}primary-700) !important;
+					border-color: var(--#{$prefix}primary-700) !important;
+					color: var(--#{$prefix}white) !important;
+				}
+			}
+
+			&.has-secondary-background-color {
+				background-color: var(--#{$prefix}secondary) !important;
+				border-color: var(--#{$prefix}secondary) !important;
+				color: var(--#{$prefix}white) !important;
+
+				&:hover {
+					background-color: var(--#{$prefix}secondary-700) !important;
+					border-color: var(--#{$prefix}secondary-700) !important;
+					color: var(--#{$prefix}white) !important;
+				}
+			}
+		}
+
+		&.is-style-outline {
+
+			.wp-block-button__link {
+				border: 1px solid var(--#{$prefix}primary);
+				color: var(--#{$prefix}primary);
+
+				&.has-primary-color {
+					border-color: var(--#{$prefix}primary) !important;
+					color: var(--#{$prefix}primary) !important;
+
+					&:hover {
+						background-color: var(--#{$prefix}primary) !important;
+						border-color: var(--#{$prefix}primary) !important;
+						color: var(--#{$prefix}white) !important;
+					}
+				}
+
+				&.has-secondary-color {
+					border-color: var(--#{$prefix}secondary) !important;
+					color: var(--#{$prefix}secondary) !important;
+
+					&:hover {
+						background-color: var(--#{$prefix}secondary) !important;
+						border-color: var(--#{$prefix}secondary) !important;
+						color: var(--#{$prefix}white) !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.gallery {
+	margin: auto -6px;
+	padding: 6px 0;
+	line-height: 1;
+	overflow-x: hidden;
+}
+
+.ie7 .gallery,
+.ie8 .gallery {
+	margin: auto;
+}
+
+.gallery .gallery-item {
+	float: left;
+	margin: 0;
+	text-align: center;
+	padding: 6px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ie7 .gallery .gallery-item,
+.ie8 .gallery .gallery-item {
+	padding: 6px 0;
+}
+
+.gallery .gallery-caption,
+.gallery .gallery-icon {
+	margin: 0;
+}
+
+.gallery .gallery-caption {
+	font-size: $font-size-base;
+	margin: 4px 0;
+}
+
+.gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33.333%;
+}
+
+.ie8 .gallery-columns-3 .gallery-item,
+.ie7 .gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.665%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.285%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.111%;
+}
+
+.gallery img {
+	max-width: 100%;
+	height: auto;
+	border: none;
+	padding: 0;
+}
+
+.wp-block-media-text {
+
+	> .wp-block-media-text__content {
+		position: relative;
+		overflow: hidden;
+		padding: 1.5rem;
+
+		@include media-breakpoint-up(lg) {
+			padding: 2.5rem;
+		}
+	}
+
+	&.is-stacked-on-tablet {
+
+		@include media-breakpoint-down(lg) {
+			grid-template-columns: 100% !important;
+
+			> .wp-block-media-text__content {
+				grid-column: 1;
+				grid-row: 2;
+			}
+
+			>.wp-block-media-text__media {
+				grid-column: 1;
+				grid-row: 1;
+			}
+		}
+	}
+}
+
+.wp-block-gallery.has-nested-images .wp-block-image figcaption,
+.wp-block-gallery.has-nested-images .wp-block-image:has(figcaption)::before {
+	display: none;
+}
