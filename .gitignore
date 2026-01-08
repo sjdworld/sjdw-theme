@@ -13,7 +13,7 @@ build
 
 # Excludes
 assets/vendor
-assets/css/*.min.css
+assets/css
 assets/js/*.min.js
 
 # Includes
