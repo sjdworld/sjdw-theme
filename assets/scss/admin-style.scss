@@ -1,0 +1,33 @@
+// Global variables
+@import "variables";
+
+// Bootstrap parts
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/root";
+
+.wp-block-widget-area__inner-blocks[data-widget-area-id="topbar"],
+.wp-block-widget-area__inner-blocks[data-widget-area-id="footer"] {
+	background-color: var(--#{$prefix}primary);
+	color: var(--#{$prefix}white);
+
+	a {
+		color: var(--#{$prefix}white);
+
+		&:hover {
+			color: var(--#{$prefix}secondary);
+		}
+	}
+
+	.wp-block-separator,
+	hr {
+		position: relative;
+		border: none !important;
+		height: 1px;
+		background-color: var(--#{$prefix}primary-700);
+	}
+}
+
+.is-root-container .wp-block[data-type="core/widget-area"],
+.blocks-widgets-container .editor-styles-wrapper {
+	max-width: 1142px !important;
+}

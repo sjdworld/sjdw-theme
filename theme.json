@@ -5,15 +5,107 @@
 			"palette": [
 				{
 					"slug": "primary",
-					"color": "#00749a",
+					"color": "#644a9d",
 					"name": "Primary"
 				},
-				{
+        {
+					"slug": "primary-100",
+					"color": "#dfdaee",
+					"name": "Primary 100"
+				},
+        {
+					"slug": "primary-200",
+					"color": "#c5bce1",
+					"name": "Primary 200"
+				},
+        {
+					"slug": "primary-300",
+					"color": "#ac9ed4",
+					"name": "Primary 300"
+				},
+        {
+					"slug": "primary-400",
+					"color": "#9481c6",
+					"name": "Primary 400"
+				},
+        {
+					"slug": "primary-500",
+					"color": "#7c64b6",
+					"name": "Primary 500"
+				},
+        {
+					"slug": "primary-700",
+					"color": "#4a3677",
+					"name": "Primary 700"
+				},
+        {
+					"slug": "primary-800",
+					"color": "#342556",
+					"name": "Primary 800"
+				},
+        {
+					"slug": "primary-900",
+					"color": "#1d1434",
+					"name": "Primary 900"
+				},
+        {
 					"slug": "secondary",
-					"color": "#464342",
+					"color": "#179fda",
 					"name": "Secondary"
+				},
+        {
+					"slug": "secondary-100",
+					"color": "#d6f0fb",
+					"name": "Secondary 100"
+				},
+        {
+					"slug": "secondary-200",
+					"color": "#aee0f6",
+					"name": "Secondary 200"
+				},
+        {
+					"slug": "secondary-300",
+					"color": "#85d1f2",
+					"name": "Secondary 300"
+				},
+        {
+					"slug": "secondary-400",
+					"color": "#5dc2ee",
+					"name": "Secondary 400"
+				},
+        {
+					"slug": "secondary-500",
+					"color": "#34b3ea",
+					"name": "Secondary 500"
+				},
+        {
+					"slug": "secondary-700",
+					"color": "#1487ba",
+					"name": "Secondary 700"
+				},
+        {
+					"slug": "secondary-800",
+					"color": "#107099",
+					"name": "Secondary 800"
+				},
+        {
+					"slug": "secondary-900",
+					"color": "#0d5879",
+					"name": "Secondary 900"
 				}
-			]
+			],
+      "gradients": [
+        {
+          "name": "Primary to right Transparent",
+          "slug": "primary-right-transparent",
+          "gradient": "linear-gradient(to right, #644a9d, transparent)"
+        },
+        {
+          "name": "Secondary to right Transparent",
+          "slug": "secondary-right-transparent",
+          "gradient": "linear-gradient(to right, #179fda, transparent)"
+        }
+      ]
 		},
 		"typography": {
 			"fontFamilies": [
@@ -43,7 +135,7 @@
 			]
 		},
 		"layout": {
-			"contentSize": "1320px",
+			"contentSize": "1116px",
 			"wideSize": "1400px"
 		}
 	},

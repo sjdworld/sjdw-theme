@@ -93,7 +93,7 @@
 
 				&.phone,
 				&.email {
-					border-right: 1px solid darken($primary, 10%);
+					border-right: 1px solid var(--#{$prefix}primary-700);
 					padding-right: 1rem;
 				}
 
@@ -109,7 +109,7 @@
 			display: inline-flex;
 			margin-left: 1rem;
 			padding-left: 0.75rem;
-			border-left: 1px solid darken($primary, 10%);
+			border-left: 1px solid var(--#{$prefix}primary-700);
 
 			&:first-child {
 				margin-left: 0;
@@ -221,8 +221,7 @@
 	#footer-top {
 		position: relative;
 		padding-top: 2rem;
-		padding-bottom: 1.5rem;
-		border-bottom: 1px solid darken($primary, 5%);
+		border-bottom: 1px solid var(--#{$prefix}primary-700);
 
 		ul.menu {
 			display: flex;
@@ -430,55 +429,5 @@ a.read-more {
 
 	&:hover {
 		color: var(--#{$prefix}primary-700);
-	}
-}
-
-.filter-box {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-bottom: 1.5rem;
-
-	.form-control {
-		width: auto;
-	}
-}
-
-.iplocation-bar {
-	position: relative;
-	padding: 1rem;
-	background-color: var(--#{$prefix}primary-100);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-
-	@include media-breakpoint-down(lg) {
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.iplocation-text {
-		margin-bottom: 0;
-		text-transform: capitalize;
-		color: var(--#{$prefix}primary);
-
-		@include media-breakpoint-down(lg) {
-			text-align: center;
-		}
-	}
-
-	.iplocation-region {
-		font-weight: 500;
-		text-decoration: underline;
-		color: var(--#{$prefix}primary-700);
-	}
-}
-
-.filter-fields {
-
-	.filter-text {
-		color: var(--#{$prefix}primary);
-		font-weight: $headings-font-weight;
 	}
 }

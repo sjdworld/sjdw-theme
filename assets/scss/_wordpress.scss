@@ -1,28 +1,3 @@
-.alignfull .is-layout-constrained {
-
-	@include make-container();
-}
-
-// Responsive containers that are 100% wide until a breakpoint
-@each $breakpoint, $container-max-width in $container-max-widths {
-
-	@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
-		%responsive-container-#{$breakpoint} {
-			max-width: $container-max-width;
-		}
-
-		.alignfull .is-layout-constrained {
-
-			@extend %responsive-container-#{$breakpoint};
-		}
-	}
-}
-
-.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-
-	@include make-container();
-}
-
 .aligncenter {
 	margin-left: auto;
 	margin-right: auto;

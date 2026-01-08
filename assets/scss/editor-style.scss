@@ -1,35 +1,14 @@
 // Global variables
 @import "variables";
 
-// Bootstrap required parts
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-
-// Bootstrap components
+// Bootstrap Layout & components
 @import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/utilities/api";
-
-:root {
-
-	@each $color, $value in $colors {
-		--#{$prefix}#{$color}: #{$value};
-	}
-
-	@each $color, $value in $grays {
-		--#{$prefix}gray-#{$color}: #{$value};
-	}
-
-	@each $color, $value in $theme-colors {
-		--#{$prefix}#{$color}: #{$value};
-	}
-}
 
 html,
 body {
@@ -103,4 +82,8 @@ ol {
 .wp-block-wp-bootstrap-blocks-row {
 
 	@include make-row();
+
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
 }

@@ -200,9 +200,9 @@ if ( ! function_exists( 'sjdw_theme_enqueue_scripts' ) ) {
 
 		// Enque the theme styles.
 		wp_enqueue_style(
-			'sjdw-theme-base',
+			'sjdw-theme',
 			$baseurl . 'assets/css/base-style.min.css',
-			array(),
+			array( 'sjdw-theme-bootstrap' ),
 			$version
 		);
 	}
@@ -233,7 +233,7 @@ if ( ! function_exists( 'sjdw_theme_admin_enqueue_script' ) ) {
 		// Admin Styles.
 		wp_enqueue_style(
 			'sjdw-theme-admin',
-			$baseurl . 'assets/css/admin.min.css',
+			$baseurl . 'assets/css/admin-style.min.css',
 			array(),
 			$version
 		);

@@ -82,7 +82,7 @@ $sjdw_theme_logo = get_template_directory_uri() . '/assets/images/logo.svg';
 										&& get_theme_mod( 'call_button_link' )
 									) :
 										?>
-										<a class="btn btn-secondary call-button"
+										<a class="btn btn-primary call-button"
 											href="<?php echo esc_url( get_theme_mod( 'call_button_link' ) ); ?>">
 											<?php echo esc_html( get_theme_mod( 'call_button_text' ) ); ?>
 										</a>

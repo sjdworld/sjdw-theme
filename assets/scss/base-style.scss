@@ -1,13 +1,6 @@
 // Global variables
 @import "variables";
 
-// Bootstrap required parts
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-
 // Theme
 @import "theme";
 
@@ -24,7 +17,7 @@
 @import "woocommerce";
 
 // GForms
-// @import "gform";
+@import "gform";
 
 // Others
 @import "others";

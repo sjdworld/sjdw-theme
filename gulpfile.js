@@ -27,7 +27,7 @@ function styles() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(dest('./assets/css/'));
 
-	const admin = src('./assets/scss/admin.scss')
+	const admin = src('./assets/scss/admin-style.scss')
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(dest('./assets/css/'));
