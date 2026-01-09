@@ -33,16 +33,18 @@ if ( empty( $sjdw_theme_permalink ) ) {
 	);
 	?>
 	<div class="card-body d-flex flex-column p-4">
+
 		<p class="mb-0 post-date small"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></p>
-		<h3 class="card-title">
+
+		<h3 class="card-title mb-3">
 			<a target="<?php echo esc_attr( $sjdw_theme_target ); ?>"
 				href="<?php echo esc_url( $sjdw_theme_permalink ); ?>">
 				<?php the_title(); ?>
 			</a>
 		</h3>
-		<p class="card-text">
-			<?php the_excerpt(); ?>
-		</p>
+
+		<?php the_excerpt(); ?>
+
 		<p class="link-arrow mt-auto mb-2 has-primary-color has-text-color has-link-color">
 			<a title="<?php echo esc_html( get_the_title() ); ?>"
 				target="<?php echo esc_attr( $sjdw_theme_target ); ?>"
@@ -53,5 +55,6 @@ if ( empty( $sjdw_theme_permalink ) ) {
 				</span>
 			</a>
 		</p>
+
 	</div>
 </article>

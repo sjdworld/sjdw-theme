@@ -1,12 +1,23 @@
 #wrapper {
-	min-height: calc(100vh - 198px);
+	min-height: calc(100vh - 61px);
 	background-color: var(--#{$prefix}white);
 	display: inline-block;
 	width: 100%;
 	position: relative;
 
 	@include media-breakpoint-up(md) {
-		min-height: calc(100vh - 206px);
+		min-height: calc(100vh - 69px);
+	}
+}
+
+.admin-bar {
+
+	#wrapper {
+		min-height: calc(100vh - 107px);
+
+		@include media-breakpoint-up(md) {
+			min-height: calc(100vh - 100px);
+		}
 	}
 }
 
@@ -124,7 +135,7 @@
 	position: relative;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	border-bottom: 2px solid var(--#{$prefix}primary);
+	border-bottom: 3px solid var(--#{$prefix}primary);
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 0.65rem;
@@ -315,9 +326,12 @@
 }
 
 #sidebar {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 
 	@include media-breakpoint-up(lg) {
 		max-width: 300px;
+		padding-top: 2rem;
 	}
 
 	p:empty {
@@ -325,7 +339,8 @@
 		visibility: hidden;
 	}
 
-	ul {
+	ul,
+	ol {
 		list-style-type: none;
 		padding: 0;
 
@@ -335,9 +350,8 @@
 		}
 	}
 
-	.widget + .widget {
-		border-top: 1px solid var(--#{$prefix}border-color);
-		padding-top: 1.5rem;
+	.widget {
+		margin-bottom: 1.5rem;
 	}
 }
 
@@ -347,28 +361,10 @@ ul.wp-block-page-list {
 	padding-left: 0;
 }
 
-.grayscale-img {
-
-	img {
-		cursor: pointer;
-		-webkit-filter: grayscale(0);
-		filter: grayscale(0);
-		transition: 0.3s ease-in-out;
-		-webkit-transition: 0.3s ease-in-out;
-	}
-
-	&:hover img {
-		-webkit-filter: grayscale(100%);
-		filter: grayscale(100%);
-		transition: 0.3s ease-in-out;
-		-webkit-transition: 0.3s ease-in-out;
-	}
-}
-
 .page-header {
 	text-align: center;
 	margin-top: 1.5rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 
 	h1,
 	h2 {
@@ -378,8 +374,12 @@ ul.wp-block-page-list {
 	}
 }
 
-.single-post .page-header {
-	text-align: left;
+.search-results,
+.single-post {
+
+	.page-header {
+		text-align: left;
+	}
 }
 
 .post-content-item + .post-content-item {
@@ -390,13 +390,14 @@ ul.wp-block-page-list {
 ul.post-meta {
 	list-style-type: none;
 	position: relative;
+	margin-bottom: 0.5rem;
 
 	li {
 		position: relative;
 		border-right: 1px solid var(--#{$prefix}border-color);
 		padding-right: 0.75rem;
 		font-size: $font-size-sm;
-		color: $text-muted;
+		color: var(--#{$prefix}gray-600);
 
 		&:last-child {
 			border-right: none;
@@ -404,9 +405,13 @@ ul.post-meta {
 		}
 
 		a {
-			color: $text-muted;
+			color: var(--#{$prefix}gray-600);
 		}
 	}
+}
+
+.post-date {
+	color: var(--#{$prefix}gray-600);
 }
 
 .tagcloud a {

@@ -21,12 +21,12 @@ if ( empty( $sjdw_theme_permalink ) ) {
 ?>
 <article class="content-item">
 
-	<h5 class="mb-3">
+	<h2 class="h4 mb-3">
 		<a target="<?php echo esc_attr( $sjdw_theme_target ); ?>"
 			href="<?php echo esc_url( $sjdw_theme_permalink ); ?>">
 			<?php the_title(); ?>
 		</a>
-	</h5>
+	</h2>
 
 	<div class="post-content">
 		<?php the_excerpt(); ?>

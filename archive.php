@@ -22,14 +22,6 @@ get_header();
 
 		<div class="row">
 
-			<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
-				<!-- start sidebar widgets -->
-				<div id="sidebar" class="col-lg order-lg-2">
-					<?php dynamic_sidebar( 'blog-sidebar' ); ?>
-				</div>
-				<!-- end sidebar widgets -->
-			<?php endif; ?>
-
 			<!-- content start -->
 			<section id="content" class="col">
 				<div class="row row-cols-1 row-cols-md-2">
@@ -43,6 +35,14 @@ get_header();
 				<?php sjdw_theme_the_numeric_pagination(); ?>
 			</section>
 			<!-- content end -->
+
+			<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+				<!-- start sidebar widgets -->
+				<div id="sidebar" class="col-lg">
+					<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+				</div>
+				<!-- end sidebar widgets -->
+			<?php endif; ?>
 
 		</div>
 

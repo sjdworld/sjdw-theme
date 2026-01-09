@@ -16,18 +16,20 @@ get_header();
 <main id="main" role="main">
 	<div class="container">
 
-		<h3 class="my-4">
-			<?php esc_html_e( 'Search Results Found For', 'sjdw-theme' ); ?>: "<?php the_search_query(); ?>"
-		</h3>
+		<header class="page-header">
+			<h1>
+				<?php esc_html_e( 'Search Results Found For', 'sjdw-theme' ); ?>: "<?php the_search_query(); ?>"
+			</h1>
+		</header>
 
 		<div class="row">
 
 			<!-- content start -->
 			<section id="content" class="col-12">
-				<div class="row row-cols-1">
+				<div class="row row-cols-1 mx-0">
 					<?php while ( false !== have_posts() ) : ?>
 						<?php the_post(); ?>
-						<div class="col mb-4">
+						<div class="col mb-3 post-content-item px-0">
 							<?php get_template_part( 'template-parts/content-search', get_post_type() ); ?>
 						</div>
 					<?php endwhile; ?>
