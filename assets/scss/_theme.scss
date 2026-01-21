@@ -205,6 +205,20 @@
 	}
 }
 
+.admin-bar #headbar #nav.fixed-nav {
+
+	.call-button {
+		--bs-btn-padding-y: 0.25rem;
+		background-color: var(--#{$prefix}secondary);
+		border-color: var(--#{$prefix}secondary);
+
+		&:hover {
+			background-color: var(--#{$prefix}secondary-700);
+			border-color: var(--#{$prefix}secondary-700);
+		}
+	}
+}
+
 #footer {
 	background-color: var(--#{$prefix}primary);
 	color: var(--#{$prefix}white);
@@ -326,12 +340,10 @@
 }
 
 #sidebar {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	position: relative;
 
 	@include media-breakpoint-up(lg) {
 		max-width: 300px;
-		padding-top: 2rem;
 	}
 
 	p:empty {
@@ -342,7 +354,7 @@
 	ul,
 	ol {
 		list-style-type: none;
-		padding: 0;
+		padding-left: 0.25rem;
 
 		li {
 			display: block;
@@ -379,6 +391,13 @@ ul.wp-block-page-list {
 
 	.page-header {
 		text-align: left;
+	}
+}
+
+.single-post {
+
+	#sidebar {
+		padding-top: 2em;
 	}
 }
 
