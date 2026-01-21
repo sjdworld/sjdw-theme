@@ -406,6 +406,14 @@ ul.wp-block-page-list {
 	padding-top: 1.5rem;
 }
 
+.content-items {
+	margin-bottom: 1rem;
+
+	.col {
+		margin-bottom: 2rem;
+	}
+}
+
 ul.post-meta {
 	list-style-type: none;
 	position: relative;

@@ -24,10 +24,10 @@ get_header();
 
 			<!-- content start -->
 			<section id="content" class="col">
-				<div class="row row-cols-1 row-cols-md-2">
+				<div class="row row-cols-1 row-cols-md-2 content-items">
 					<?php while ( false !== have_posts() ) : ?>
 						<?php the_post(); ?>
-						<div class="col mb-5">
+						<div class="col">
 							<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 						</div>
 					<?php endwhile; ?>
