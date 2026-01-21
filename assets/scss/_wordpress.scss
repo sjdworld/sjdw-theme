@@ -102,6 +102,10 @@
 
 		&.is-style-outline {
 
+			.wp-element-button {
+				background-color: transparent !important;
+			}
+
 			.wp-block-button__link {
 				border: 1px solid var(--#{$prefix}primary);
 				color: var(--#{$prefix}primary);

@@ -45,16 +45,5 @@ if ( empty( $sjdw_theme_permalink ) ) {
 
 		<?php the_excerpt(); ?>
 
-		<p class="link-arrow mt-auto mb-2 has-primary-color has-text-color has-link-color">
-			<a title="<?php echo esc_html( get_the_title() ); ?>"
-				target="<?php echo esc_attr( $sjdw_theme_target ); ?>"
-				href="<?php echo esc_url( $sjdw_theme_permalink ); ?>">
-				<?php esc_html_e( 'Read more', 'sjdw-theme' ); ?>
-				<span class="visually-hidden visually-hidden-focusable">
-					<?php echo esc_html( $sjdw_theme_redmore_txt ); ?>
-				</span>
-			</a>
-		</p>
-
 	</div>
 </article>

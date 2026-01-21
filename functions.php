@@ -116,12 +116,12 @@ if ( ! function_exists( 'sjdw_theme_widgets_init' ) ) {
 		// Sidebar widgets.
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Sidebar', 'sjdw-theme' ),
+				'name'          => esc_html__( 'Blog Sidebar', 'sjdw-theme' ),
 				'id'            => 'blog-sidebar',
 				'description'   => esc_html__( 'Add widgets here.', 'sjdw-theme' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h2 class="widget-title h4">',
+				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
 			)
 		);
@@ -132,9 +132,9 @@ if ( ! function_exists( 'sjdw_theme_widgets_init' ) ) {
 				'name'          => esc_html__( 'Footer', 'sjdw-theme' ),
 				'id'            => 'footer',
 				'description'   => esc_html__( 'Add widgets here.', 'sjdw-theme' ),
-				'before_widget' => '<div id="%1$s" class="col-12 mb-3 widget %2$s">',
+				'before_widget' => '<div id="%1$s" class="col widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h2 class="widget-title h4">',
+				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
 			)
 		);
@@ -330,7 +330,7 @@ if ( ! function_exists( 'sjdw_theme_get_post_featured_video' ) ) {
 
 		if ( ! empty( $videoid ) ) {
 			$url   = 'https://www.youtube-nocookie.com/embed/' . $videoid . '?rel=0';
-			$video = '<iframe class="embed-responsive-item" src="' . esc_url( $url ) . '" rel="0"
+			$video = '<iframe src="' . esc_url( $url ) . '" rel="0"
 			allowfullscreen></iframe>';
 		}
 

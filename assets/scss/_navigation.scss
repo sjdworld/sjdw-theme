@@ -350,5 +350,40 @@
 				}
 			}
 		}
+
+		&.fixed-nav {
+			background-color: var(--#{$prefix}primary);
+			position: fixed;
+			z-index: 9999;
+			top: 0;
+			left: 0;
+			width: 100%;
+			-webkit-transform: translateY(0);
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+			transition: -webkit-transform 0.3s linear;
+			transition: transform 0.3s linear;
+
+			.navigation {
+				justify-content: center !important;
+				margin: 0;
+
+				ul.menu > li {
+
+					> a {
+						line-height: 45px;
+						color: var(--#{$prefix}white);
+
+						&:hover {
+							color: var(--#{$prefix}secondary);
+						}
+					}
+
+					ul {
+						border-radius: 0;
+					}
+				}
+			}
+		}
 	}
 }
