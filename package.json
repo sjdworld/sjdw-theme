@@ -17,12 +17,10 @@
 	},
 	"scripts": {
 		"build": "gulp",
-		"check": "npm-run-all -p check:scss check:css check:js",
+		"check": "npm-run-all -p check:scss check:js",
 		"check:scss": "stylelint 'assets/scss/**/*.scss' --allow-empty-input",
-		"check:css": "stylelint 'assets/css/**/*.css' --allow-empty-input",
 		"check:js": "eslint 'assets/js/*.js' --no-error-on-unmatched-pattern",
-		"fix": "npm-run-all -p fix:scss fix:css fix:js",
-		"fix:css": "stylelint 'assets/css/**/*.css' --fix --allow-empty-input",
+		"fix": "npm-run-all -p fix:scss fix:js",
 		"fix:scss": "stylelint 'assets/scss/**/*.scss' --fix --allow-empty-input",
 		"fix:js": "eslint 'assets/js/*.js' --fix --no-error-on-unmatched-pattern"
 	}

@@ -12,9 +12,7 @@ build
 .phpunit.result.cache
 
 # Excludes
-assets/vendor
-assets/css
-assets/js/*.min.js
+assets/dist
 
 # Includes
 !assets/scss/vendor

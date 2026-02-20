@@ -166,25 +166,17 @@ if ( ! function_exists( 'sjdw_theme_enqueue_scripts' ) ) {
 			true
 		);
 
-		// Fonts.
-		wp_enqueue_style(
-			'sjdw-theme-fonts',
-			$baseurl . 'assets/css/fonts.min.css',
-			array(),
-			$version
-		);
-
 		// Bootstrap.
 		wp_enqueue_script(
 			'sjdw-theme-bootstrap',
-			$baseurl . 'assets/vendor/bootstrap/bootstrap.bundle.min.js',
+			$baseurl . 'assets/dist/bootstrap/bootstrap.min.js',
 			array( 'jquery' ),
 			$version,
 			true
 		);
 		wp_enqueue_style(
 			'sjdw-theme-bootstrap',
-			$baseurl . 'assets/vendor/bootstrap/bootstrap.min.css',
+			$baseurl . 'assets/dist/bootstrap/bootstrap.min.css',
 			array(),
 			$version
 		);
@@ -192,7 +184,7 @@ if ( ! function_exists( 'sjdw_theme_enqueue_scripts' ) ) {
 		// Enque the theme script.
 		wp_enqueue_script(
 			'sjdw-theme',
-			$baseurl . 'assets/js/main.min.js',
+			$baseurl . 'assets/dist/main.min.js',
 			array( 'jquery', 'sjdw-theme-bootstrap' ),
 			$version,
 			true
@@ -201,7 +193,7 @@ if ( ! function_exists( 'sjdw_theme_enqueue_scripts' ) ) {
 		// Enque the theme styles.
 		wp_enqueue_style(
 			'sjdw-theme',
-			$baseurl . 'assets/css/base-style.min.css',
+			$baseurl . 'assets/dist/base-style.min.css',
 			array( 'sjdw-theme-bootstrap' ),
 			$version
 		);
@@ -222,18 +214,10 @@ if ( ! function_exists( 'sjdw_theme_admin_enqueue_script' ) ) {
 		$version = $theme->exists() ? $theme->get( 'Version' ) : null;
 		$baseurl = trailingslashit( get_template_directory_uri() );
 
-		// Fonts.
-		wp_enqueue_style(
-			'sjdw-theme-fonts',
-			$baseurl . 'assets/css/fonts.min.css',
-			array(),
-			$version
-		);
-
 		// Admin Styles.
 		wp_enqueue_style(
 			'sjdw-theme-admin',
-			$baseurl . 'assets/css/admin-style.min.css',
+			$baseurl . 'assets/dist/admin-style.min.css',
 			array(),
 			$version
 		);

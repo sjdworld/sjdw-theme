@@ -13,12 +13,6 @@ defined( 'ABSPATH' ) || exit;
 $sjdw_theme_permalink = get_post_meta( get_the_ID(), '_external_link', true );
 $sjdw_theme_target    = get_post_meta( get_the_ID(), '_link_target', true );
 
-$sjdw_theme_redmore_txt = wp_sprintf(
-	/* translators: 1: The title. */
-	esc_html__( 'about %1$s', 'sjdw-theme' ),
-	esc_html( get_the_title() )
-);
-
 if ( empty( $sjdw_theme_permalink ) ) {
 	$sjdw_theme_permalink = get_permalink( get_the_ID() );
 	$sjdw_theme_target    = '';

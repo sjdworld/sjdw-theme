@@ -3,9 +3,6 @@
 	"extends": [
 		"plugin:@wordpress/eslint-plugin/esnext"
 	],
-	"ignorePatterns": [
-        "assets/js/*.min.js"
-    ],
 	"env": {
 		"browser": true,
 		"jquery": true,

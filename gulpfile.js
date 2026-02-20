@@ -20,24 +20,19 @@ function styles() {
 	const theme = src('./assets/scss/base-style.scss')
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(dest('./assets/css/'));
+		.pipe(dest('./assets/dist/'));
 
 	const editor = src('./assets/scss/editor-style.scss')
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(dest('./assets/css/'));
+		.pipe(dest('./assets/dist/'));
 
 	const admin = src('./assets/scss/admin-style.scss')
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(dest('./assets/css/'));
+		.pipe(dest('./assets/dist/'));
 
-	const fonts = src('./assets/scss/fonts.scss')
-		.pipe(sass(options).on('error', sass.logError))
-		.pipe(rename({suffix: '.min'}))
-        .pipe(dest('./assets/css/'));
-
-	return merge(theme, editor, admin, fonts);
+	return merge(theme, editor, admin);
 }
 
 // Theme JS.
@@ -46,7 +41,7 @@ function scripts() {
 	const main = src('./assets/js/main.js')
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('./assets/js/'));
+		.pipe(dest('./assets/dist/'));
 
 	return main;
 }
@@ -57,7 +52,7 @@ function vendor_styles() {
 	const bootstrap = src('./assets/scss/vendor/bootstrap.scss')
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('./assets/vendor/bootstrap/'));
+		.pipe(dest('./assets/dist/bootstrap/'));
 
 	return bootstrap;
 }
@@ -65,8 +60,8 @@ function vendor_styles() {
 // Vendor JS.
 function vendor_scripts() {
 	// Bootstrap.
-    const bootstrap = src('./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', { sourcemaps: true })
-        .pipe(dest('./assets/vendor/bootstrap/', { sourcemaps: true }));
+    const bootstrap = src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+        .pipe(dest('./assets/dist/bootstrap/'));
 
 	return bootstrap;
 }
