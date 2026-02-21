@@ -10,8 +10,6 @@ declare(strict_types=1);
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$sjdw_theme_logo = get_template_directory_uri() . '/assets/images/logo.svg';
-
 ?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -44,12 +42,7 @@ $sjdw_theme_logo = get_template_directory_uri() . '/assets/images/logo.svg';
 					<div class="row align-items-center">
 						<div id="logo-holder" class="col-lg-auto">
 							<a class="custom-logo-link" href="<?php echo esc_url( home_url() ); ?>">
-								<?php
-								sjdw_theme_the_custom_logo(
-									'custom_logo',
-									$sjdw_theme_logo
-								);
-								?>
+								<?php sjdw_theme()->utility()->the_custom_logo(); ?>
 							</a>
 							<div class="d-inline-flex align-items-center mobile-menu-holder">
 								<?php if ( has_nav_menu( 'main' ) ) : ?>

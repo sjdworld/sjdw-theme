@@ -37,8 +37,8 @@ jobs:
       - name: Static Analysis
         run: composer run phpstan
 
-#      - name: PHPUnit Testing
-#        run: composer run phpunit
+      - name: PHPUnit Testing
+        run: composer run phpunit
 
 #     - name: Coverage Check
 #       run: composer run coverage

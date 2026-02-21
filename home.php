@@ -18,7 +18,7 @@ get_header();
 <main id="main" role="main">
 	<div class="container">
 
-		<?php if ( $sjdw_theme_blogid && ! sjdw_theme_hide_page_title( $sjdw_theme_blogid ) ) : ?>
+		<?php if ( $sjdw_theme_blogid && ! sjdw_theme()->utility()->hide_page_title( $sjdw_theme_blogid ) ) : ?>
 		<header class="page-header">
 			<h1><?php echo esc_html( get_the_title( $sjdw_theme_blogid ) ); ?></h1>
 		</header>
@@ -36,7 +36,7 @@ get_header();
 						</div>
 					<?php endwhile; ?>
 				</div>
-				<?php sjdw_theme_the_numeric_pagination(); ?>
+				<?php sjdw_theme()->utility()->the_pagination(); ?>
 			</section>
 			<!-- content end -->
 

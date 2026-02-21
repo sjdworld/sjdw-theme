@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <article class="single-page">
 
-	<?php if ( ! sjdw_theme_hide_page_title( get_the_ID() ) ) : ?>
+	<?php if ( ! sjdw_theme()->utility()->hide_page_title( get_the_ID() ) ) : ?>
 	<header class="page-header">
 		<h1><?php the_title(); ?></h1>
 	</header>

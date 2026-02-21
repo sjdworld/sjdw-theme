@@ -32,7 +32,7 @@ get_header();
 						</div>
 					<?php endwhile; ?>
 				</div>
-				<?php sjdw_theme_the_numeric_pagination(); ?>
+				<?php sjdw_theme()->utility()->the_pagination(); ?>
 			</section>
 			<!-- content end -->
 
