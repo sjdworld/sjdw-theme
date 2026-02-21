@@ -5,6 +5,7 @@ const sass = require('gulp-dart-sass');
 const rename = require('gulp-rename');
 const merge = require('merge-stream');
 const uglify = require('gulp-uglify');
+const replace = require('gulp-replace');
 
 // SASS Options.
 const options = {
@@ -61,6 +62,7 @@ function vendor_styles() {
 function vendor_scripts() {
 	// Bootstrap.
     const bootstrap = src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+		.pipe(replace(/\/\/# sourceMappingURL=.*\n?/, ''))
         .pipe(dest('./assets/dist/bootstrap/'));
 
 	return bootstrap;
