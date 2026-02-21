@@ -43,6 +43,11 @@ class Updater {
 	 */
 	public function get_update_info( $transient ) {
 
+		// Exit if not update lookup.
+		if ( ! is_admin() || empty( $transient ) ) {
+			return $transient;
+		}
+
 		$basename = 'sjdw-theme';
 		$theme    = wp_get_theme( $basename );
 		$local    = array(
