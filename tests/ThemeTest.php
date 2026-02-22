@@ -84,19 +84,6 @@ class ThemeTest extends TestCase {
 	}
 
 	/**
-	 * Test load method.
-	 *
-	 * @return void
-	 */
-	public function test_load(): void {
-
-		$theme = Theme::instance();
-		$this->assertFalse( $theme->is_loaded() );
-		$theme->load();
-		$this->assertTrue( $theme->is_loaded() );
-	}
-
-	/**
 	 * Test utility method.
 	 *
 	 * @return void

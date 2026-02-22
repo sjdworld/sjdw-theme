@@ -172,21 +172,37 @@ class Utility {
 	/**
 	 * Print the post thumbnail
 	 *
-	 * @param int|WP_Post  $post The post.
-	 * @param string       $size The thumbnail size.
-	 * @param array<mixed> $attr The attributes.
+	 * @param int|WP_Post $post       The post.
+	 * @param string      $size       The thumbnail size.
+	 * @param bool        $add_link   Add permalink to the thumbnail.
+	 * @param bool        $show_video Show the video if available.
 	 *
 	 * @return void
 	 */
 	public static function the_post_thumbnail(
 		$post,
 		string $size,
-		array $attr = array( 'class' => 'img-fluid' )
+		bool $add_link = true,
+		bool $show_video = true
 	): void {
 
-		if ( has_post_thumbnail( $post ) ) {
+		// Get the post ID.
+		$post_id = is_int( $post ) ? $post : $post->ID;
+		$attr    = array( 'class' => 'img-fluid' );
+
+		// Get the youtube video ID.
+		$video = $show_video ? get_post_meta( $post_id, '_featured_video', true ) : '';
+
+		if ( $video ) {
+			$html = wp_sprintf(
+				'<div class="ratio ratio-4x3">
+					<iframe src="https://www.youtube-nocookie.com/embed/%1$s?rel=0" rel="0" allowfullscreen></iframe>
+				</div>',
+				esc_attr( $video )
+			);
+		} elseif ( has_post_thumbnail( $post_id ) ) {
 			// Get the image.
-			$html = get_the_post_thumbnail( $post, $size, $attr );
+			$html = get_the_post_thumbnail( $post_id, $size, $attr );
 		} else {
 
 			// Get the default image from theme settings.
@@ -205,19 +221,22 @@ class Utility {
 			if ( empty( $html ) ) {
 
 				$default = get_template_directory_uri() . '/assets/images/no-image.png';
-				$title   = get_the_title( $post );
+				$title   = get_the_title( $post_id );
 
 				// Get the default image.
 				$html = wp_sprintf(
-					'<img src="%1$s" alt="%2$s" class="%2$s"/>',
+					'<img src="%1$s" alt="%2$s" class="img-fluid"/>',
 					esc_url( $default ),
-					esc_html( $title ),
-					! empty( $attr['class'] ) ? esc_attr( $attr['class'] ) : ''
+					esc_html( $title )
 				);
 			}
 		}
 
-		echo wp_kses_post( $html );
+		if ( $add_link && empty( $video ) ) {
+			$html = self::get_post_link( $post_id, $html );
+		}
+
+		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

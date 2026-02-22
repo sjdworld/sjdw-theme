@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace Sjdworld\SjdwTheme;
 
 use Sjdworld\SjdwTheme\Helper\Utility;
+use Sjdworld\SjdwTheme\Posts\Page;
+use Sjdworld\SjdwTheme\Posts\Post;
 use Sjdworld\SjdwTheme\Widgets\ContactWidget;
 use Sjdworld\SjdwTheme\Widgets\PostFilterWidget;
 use Sjdworld\SjdwTheme\Widgets\WoocartWidget;
@@ -114,13 +116,23 @@ final class Theme {
 		( new Scripts() )->init();
 		( new Settings() )->init();
 
+		$page = new Page();
+		$page->init();
+
 		// Load widgets.
 		( new ContactWidget() )->init();
 		( new PostFilterWidget() )->init();
 		( new WoocartWidget() )->init();
 
-		// Initialize the Updater.
-		( new Updater() )->init();
+		if ( is_admin() ) {
+
+			// Initialize the Updater.
+			( new Updater() )->init();
+
+			// Initialise all classes.
+			$page->admin_init();
+			( new Post() )->admin_init();
+		}
 
 		// Flag loaded.
 		self::$loaded = true;
