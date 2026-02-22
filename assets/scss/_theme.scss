@@ -464,3 +464,14 @@ a.read-more {
 		color: var(--#{$prefix}primary-700);
 	}
 }
+
+.icon-woocart {
+	position: relative;
+
+	#cartcount .count {
+		position: absolute;
+		top: -7px;
+		right: -7px;
+		line-height: normal;
+	}
+}

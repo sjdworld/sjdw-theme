@@ -47,7 +47,7 @@ class Post {
 
 		add_meta_box(
 			'sjdw-theme-post-video',
-			__( 'Featured Video', 'sjdw-theme' ),
+			__( 'Video', 'sjdw-theme' ),
 			array( $this, 'render_video_meta' ),
 			'post',
 			'side'

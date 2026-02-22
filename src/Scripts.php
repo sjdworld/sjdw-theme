@@ -28,9 +28,6 @@ class Scripts {
 
 		// Add Back-End scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-
-		// Inject script loader strategy.
-		add_filter( 'script_loader_tag', array( $this, 'inject_script_strategy' ), 10, 2 );
 	}
 
 	/**
@@ -103,41 +100,5 @@ class Scripts {
 			array(),
 			$version
 		);
-	}
-
-	/**
-	 * Inject script loader strategy.
-	 *
-	 * @param string $tag    The script tag for the enqueued script.
-	 * @param string $handle The script’s registered handle.
-	 *
-	 * @return string
-	 */
-	public function inject_script_strategy( string $tag, string $handle ): string {
-
-		$handlers = array(
-			'sjdw-theme-bootstrap',
-			'sjdw-theme',
-		);
-
-		/**
-		 * Filter and return all the handlers for defer and async.
-		 *
-		 * @param string[] $handlers The handlers.
-		 */
-		$handlers = apply_filters( 'sjdw_theme_script_strategy', $handlers );
-
-		if (
-			is_admin() ||
-			! in_array( $handle, $handlers, true ) ||
-			str_contains( $tag, ' defer' ) ||
-			str_contains( $tag, ' async' )
-		) {
-			return $tag;
-		}
-
-		$tag = str_replace( ' src', ' defer src', $tag );
-
-		return $tag;
 	}
 }

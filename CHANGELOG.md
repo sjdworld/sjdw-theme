@@ -12,6 +12,11 @@ All the notable changes to this project will be documented in this file.
 ### Removed
 - 
 
+## [1.7.1]
+
+### Removed
+- Defer loading for jQuery
+
 ## [1.7.0]
 
 ### Added
