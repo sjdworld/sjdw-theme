@@ -26,8 +26,20 @@ get_header();
 
 		<div class="row">
 
+			<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+				<!-- start sidebar widgets -->
+				<div id="sidebar" class="col-md-4 col-lg-3 mb-4 order-md-2">
+					<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+				</div>
+				<!-- end sidebar widgets -->
+			<?php endif; ?>
+
 			<!-- content start -->
-			<section id="content" class="col <?php echo ! absint( $sjdw_theme_blogid ) ? 'pt-4 pt-md-5' : ''; ?>">
+			<?php
+			$sjdw_theme_content_class  = is_active_sidebar( 'blog-sidebar' ) ? 'col-md-8 col-lg-9' : 'col-12';
+			$sjdw_theme_content_class .= ! absint( $sjdw_theme_blogid ) ? ' pt-4 pt-md-5' : '';
+			?>
+			<section id="content" class="<?php echo esc_attr( $sjdw_theme_content_class ); ?>">
 				<div class="row row-cols-1 row-cols-md-2 content-items">
 					<?php while ( false !== have_posts() ) : ?>
 						<?php the_post(); ?>
@@ -39,14 +51,6 @@ get_header();
 				<?php sjdw_theme()->utility()->the_pagination(); ?>
 			</section>
 			<!-- content end -->
-
-			<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
-				<!-- start sidebar widgets -->
-				<div id="sidebar" class="col-lg">
-					<?php dynamic_sidebar( 'blog-sidebar' ); ?>
-				</div>
-				<!-- end sidebar widgets -->
-			<?php endif; ?>
 
 		</div>
 

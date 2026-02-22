@@ -10,6 +10,9 @@ declare(strict_types=1);
 namespace Sjdworld\SjdwTheme;
 
 use Sjdworld\SjdwTheme\Helper\Utility;
+use Sjdworld\SjdwTheme\Widgets\ContactWidget;
+use Sjdworld\SjdwTheme\Widgets\PostFilterWidget;
+use Sjdworld\SjdwTheme\Widgets\WoocartWidget;
 
 /**
  * The Theme class.
@@ -110,6 +113,11 @@ final class Theme {
 		( new Hooks() )->init();
 		( new Scripts() )->init();
 		( new Settings() )->init();
+
+		// Load widgets.
+		( new ContactWidget() )->init();
+		( new PostFilterWidget() )->init();
+		( new WoocartWidget() )->init();
 
 		// Initialize the Updater.
 		( new Updater() )->init();

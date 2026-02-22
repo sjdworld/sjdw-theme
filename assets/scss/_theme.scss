@@ -342,10 +342,6 @@
 #sidebar {
 	position: relative;
 
-	@include media-breakpoint-up(lg) {
-		max-width: 300px;
-	}
-
 	p:empty {
 		display: none;
 		visibility: hidden;
@@ -364,6 +360,11 @@
 
 	.widget {
 		margin-bottom: 1.5rem;
+
+		+ .widget:not(.no-border) {
+			border-top: 1px solid var(--#{$prefix}border-color);
+			padding-top: 1.5rem;
+		}
 	}
 }
 

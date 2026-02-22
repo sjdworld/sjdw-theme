@@ -15,7 +15,8 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="row">
 
-		<div class="col">
+		<?php $sjdw_theme_content_class = is_active_sidebar( 'blog-sidebar' ) ? 'col-md-8 col-lg-9' : 'col-12'; ?>
+		<div class="<?php echo esc_attr( $sjdw_theme_content_class ); ?>">
 			<header class="page-header mb-3">
 				<h1 class="mb-0"><?php the_title(); ?></h1>
 				<?php get_template_part( 'template-parts/meta', get_post_type() ); ?>
@@ -28,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
 			<!-- start sidebar widgets -->
-			<div id="sidebar" class="col-lg">
+			<div id="sidebar" class="col-md-4 col-lg-3 mb-4">
 				<?php dynamic_sidebar( 'blog-sidebar' ); ?>
 			</div>
 			<!-- end sidebar widgets -->

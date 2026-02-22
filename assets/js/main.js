@@ -55,6 +55,16 @@ jQuery( function( $ ) {
 		}
 	} );
 
+	// Submit post filter.
+	$( 'body' ).on( 'change', '.post-filter-year', function() {
+		const form = $( this ).parents( '.post-filter-form' );
+		form.find( '.post-filter-month' ).val( '' );
+		form.submit();
+	} );
+	$( 'body' ).on( 'change', '.post-filter-month', function() {
+		$( this ).parents( '.post-filter-form' ).submit();
+	} );
+
 	$( window ).on( 'scroll', function() {
 		const scrollTop = $( this ).scrollTop();
 		if ( scrollTop > 500 ) {

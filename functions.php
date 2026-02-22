@@ -17,6 +17,9 @@ require_once get_parent_theme_file_path( 'src/Scripts.php' );
 require_once get_parent_theme_file_path( 'src/Settings.php' );
 require_once get_parent_theme_file_path( 'src/Updater.php' );
 require_once get_parent_theme_file_path( 'src/Helper/Utility.php' );
+require_once get_parent_theme_file_path( 'src/Widgets/ContactWidget.php' );
+require_once get_parent_theme_file_path( 'src/Widgets/PostFilterWidget.php' );
+require_once get_parent_theme_file_path( 'src/Widgets/WoocartWidget.php' );
 
 /**
  * Get the theme main class instance.
