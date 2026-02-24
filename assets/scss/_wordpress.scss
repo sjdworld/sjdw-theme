@@ -3,12 +3,6 @@
 	margin-right: auto;
 }
 
-.alignleft,
-.alignright {
-	margin-inline-start: 0 !important;
-	margin-inline-end: 0 !important;
-}
-
 .alignright {
 	float: right;
 }
@@ -249,9 +243,4 @@
 			}
 		}
 	}
-}
-
-.wp-block-gallery.has-nested-images .wp-block-image figcaption,
-.wp-block-gallery.has-nested-images .wp-block-image:has(figcaption)::before {
-	display: none;
 }

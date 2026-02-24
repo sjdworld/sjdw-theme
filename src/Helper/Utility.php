@@ -176,6 +176,7 @@ class Utility {
 	 * @param string      $size       The thumbnail size.
 	 * @param bool        $add_link   Add permalink to the thumbnail.
 	 * @param bool        $show_video Show the video if available.
+	 * @param string      $cssclass   The CSS class.
 	 *
 	 * @return void
 	 */
@@ -183,12 +184,13 @@ class Utility {
 		$post,
 		string $size,
 		bool $add_link = true,
-		bool $show_video = true
+		bool $show_video = true,
+		string $cssclass = 'img-fluid'
 	): void {
 
 		// Get the post ID.
 		$post_id = is_int( $post ) ? $post : $post->ID;
-		$attr    = array( 'class' => 'img-fluid' );
+		$attr    = array( 'class' => $cssclass );
 
 		// Get the youtube video ID.
 		$video = $show_video ? get_post_meta( $post_id, '_featured_video', true ) : '';
@@ -220,14 +222,15 @@ class Utility {
 
 			if ( empty( $html ) ) {
 
-				$default = get_template_directory_uri() . '/assets/images/no-image.png';
+				$default = get_stylesheet_directory_uri() . '/assets/images/no-image.png';
 				$title   = get_the_title( $post_id );
 
 				// Get the default image.
 				$html = wp_sprintf(
-					'<img src="%1$s" alt="%2$s" class="img-fluid"/>',
+					'<img src="%1$s" alt="%2$s" class="%3$s"/>',
 					esc_url( $default ),
-					esc_html( $title )
+					esc_html( $title ),
+					esc_attr( $cssclass )
 				);
 			}
 		}
