@@ -52,8 +52,8 @@
 		</properties>
 	</rule>
 
-	<!-- Allow for plugin specific exceptions to the file name rules based
-		 on the plugin hierarchy. -->
+	<!-- Allow for theme specific exceptions to the file name rules based
+		 on the theme hierarchy. -->
 	<rule ref="WordPress.Files.FileName">
 		<!-- Exclude WordPress fileName rules -->
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>

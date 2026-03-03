@@ -69,7 +69,7 @@ class Post {
 		// Nonce.
 		$html = wp_nonce_field( basename( __FILE__ ), 'sjdw_nonce', false, false );
 
-		// Title.
+		// External Link.
 		$html .= '<p class="form-group">';
 		$html .= wp_sprintf(
 			'<label class="form-label">%1$s</label>
@@ -79,7 +79,7 @@ class Post {
 		);
 		$html .= '</p>';
 
-		// Hide Title.
+		// Open in new window.
 		$html .= '<p class="form-group">';
 		$html .= wp_sprintf(
 			'<input type="checkbox" class="checkbox" id="%1$s" name="link_target" value="_blank" %2$s />
