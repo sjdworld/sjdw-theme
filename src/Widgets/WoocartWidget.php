@@ -62,14 +62,14 @@ class WoocartWidget extends WP_Widget {
 
 		if ( function_exists( 'WC' ) && function_exists( 'wc_get_cart_url' ) ) {
 
-			$args = array(
+			$targs = array(
 				'link'       => wc_get_cart_url(),
 				'count'      => ! empty( WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0,
 				'show_count' => $show_count,
 			);
 
 			ob_start();
-			get_template_part( 'template-parts/woocart', 'icon', $args );
+			get_template_part( 'template-parts/woocart', 'icon', $targs );
 			$html .= ob_get_clean();
 
 		}
