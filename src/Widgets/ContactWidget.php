@@ -66,7 +66,7 @@ class ContactWidget extends WP_Widget {
 			)
 		);
 
-		$html = $args['before_widget'];
+		$html = ! empty( $args['before_widget'] ) ? $args['before_widget'] : '';
 
 		if ( ! empty( $instance['title'] ) ) {
 			$html .= $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
@@ -75,7 +75,7 @@ class ContactWidget extends WP_Widget {
 		ob_start();
 		get_template_part( 'template-parts/contact', 'icons', $instance );
 		$html .= ob_get_clean();
-		$html .= $args['after_widget'];
+		$html .= ! empty( $args['after_widget'] ) ? $args['after_widget'] : '';
 
 		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

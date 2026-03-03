@@ -54,7 +54,7 @@ class WoocartWidget extends WP_Widget {
 		$title      = isset( $instance['title'] ) ? esc_html( $instance['title'] ) : '';
 		$show_count = isset( $instance['show_count'] ) ? absint( $instance['show_count'] ) : 0;
 
-		$html = $args['before_widget'];
+		$html = ! empty( $args['before_widget'] ) ? $args['before_widget'] : '';
 
 		if ( ! empty( $title ) ) {
 			$html .= $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
@@ -74,7 +74,7 @@ class WoocartWidget extends WP_Widget {
 
 		}
 
-		$html .= $args['after_widget'];
+		$html .= ! empty( $args['after_widget'] ) ? $args['after_widget'] : '';
 
 		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

@@ -92,7 +92,7 @@ class PostFilterWidget extends WP_Widget {
 			}
 		}
 
-		$html = $args['before_widget'];
+		$html = ! empty( $args['before_widget'] ) ? $args['before_widget'] : '';
 
 		if ( ! empty( $title ) ) {
 			$html .= $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
@@ -158,7 +158,7 @@ class PostFilterWidget extends WP_Widget {
 		}
 
 		$html .= '</form>';
-		$html .= $args['after_widget'];
+		$html .= ! empty( $args['after_widget'] ) ? $args['after_widget'] : '';
 
 		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
