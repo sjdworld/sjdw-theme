@@ -28,6 +28,36 @@ ol {
 	}
 }
 
+.alignnone {
+	margin: 0;
+}
+
+.aligncenter {
+	margin: 0 auto;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignfull {
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	left: 50%;
+}
+
+.alignwide {
+	position: relative;
+	width: 1400px;
+	margin-left: -700px;
+	left: 50%;
+}
+
 .has-text-color > a {
 	color: inherit;
 }

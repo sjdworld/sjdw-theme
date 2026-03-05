@@ -10,6 +10,9 @@
 	-->
 	<arg value="ps"/>
 
+	<!-- Enable colors in the output -->
+    <arg name="colors" />
+
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>
 
