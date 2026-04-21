@@ -99,7 +99,8 @@ class Hooks {
 		// Refister the navigation locations.
 		register_nav_menus(
 			array(
-				'main' => esc_html__( 'Main Menu', 'sjdw-theme' ),
+				'main'   => esc_html__( 'Main Menu', 'sjdw-theme' ),
+				'policy' => esc_html__( 'Policy Menu', 'sjdw-theme' ),
 			)
 		);
 

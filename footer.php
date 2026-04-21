@@ -27,29 +27,27 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 
 			<div id="copyright">
-				<ul class="copyright-items">
-					<li>
-						<?php
-						echo wp_sprintf(
-							/* translators: 1: Current year, 2: Blog title. */
-							esc_html__( 'Copyright &copy; %1$s %2$s', 'sjdw-theme' ),
-							esc_html( date_i18n( 'Y' ) ),
-							esc_html( get_bloginfo( 'name' ) )
-						);
-						?>
-					</li>
-					<?php if ( has_nav_menu( 'policy' ) ) : ?>
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'policy',
-									'container'      => '',
-									'items_wrap'     => '%3$s',
-								)
-							);
-						?>
-					<?php endif; ?>
-				</ul>
+				<span>
+					<?php
+					echo wp_sprintf(
+						/* translators: 1: Current year, 2: Blog title. */
+						esc_html__( 'Copyright &copy; %1$s %2$s', 'sjdw-theme' ),
+						esc_html( date_i18n( 'Y' ) ),
+						esc_html( get_bloginfo( 'name' ) )
+					);
+					?>
+				</span>
+				<?php
+				if ( has_nav_menu( 'policy' ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location' => 'policy',
+							'container'      => '',
+							'items_wrap'     => '<ul id="policy-menu" class="menu">%3$s</ul>',
+						)
+					);
+				}
+				?>
 			</div>
 
 		</div>
